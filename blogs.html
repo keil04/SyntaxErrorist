@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="RAMpage — a student-driven blog and gallery for campus stories and creative work." />
+  <title>Blogs | RAMpage</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+<header>
+  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+    <div class="container-fixed">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="assets/logo.svg" alt="RAMpage logo" width="36" height="36">
+        <span class="brand-text">RAMpage</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blogs.html" aria-current="page">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="spotlight.html">Spotlight</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main id="main-content" class="section">
+  <div class="container-fixed">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+      <div>
+        <h1 class="page-heading">Blogs</h1>
+        <p class="text-muted-weak" style="max-width:760px;">
+          Students can share their own stories using the <strong>gold Add Story</strong> button.
+          Posts are added instantly with jQuery and saved on this device using <code>localStorage</code>.
+        </p>
+        <div class="accent-divider" aria-hidden="true"></div>
+      </div>
+
+      <div class="story-actions" aria-label="Blog actions">
+        <button class="btn-accent" type="button" data-bs-toggle="modal" data-bs-target="#storyModal">
+          <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Add Story
+        </button>
+        <button class="btn-gold-outline" type="button" id="clearSavedStories" title="Removes stories saved on this device">
+          <i class="fa-solid fa-trash" aria-hidden="true"></i> Clear My Stories
+        </button>
+      </div>
+    </div>
+
+    <div class="search-wrap mb-4" aria-label="Search blog posts">
+      <div class="search-input">
+        <label class="form-label" for="blogSearch">Search</label>
+        <input id="blogSearch" type="search" class="form-control" placeholder="Search by title or text...">
+      </div>
+      <div>
+        <label class="form-label" for="blogSort">Sort</label>
+        <select id="blogSort" class="form-control">
+          <option value="newest" selected>Newest first</option>
+          <option value="oldest">Oldest first</option>
+        </select>
+      </div>
+      <div class="ms-auto" style="min-width:180px;">
+        <label class="form-label" for="blogCount">Showing</label>
+        <input id="blogCount" class="form-control" type="text" value="0 posts" readonly>
+      </div>
+    </div>
+
+    <div class="filter-row mb-4" aria-label="Filter blog posts">
+      <button class="filter-chip js-blog-filter active" type="button" data-category="all">All</button>
+      <button class="filter-chip js-blog-filter" type="button" data-category="campus">Campus</button>
+      <button class="filter-chip js-blog-filter" type="button" data-category="study">Study</button>
+      <button class="filter-chip js-blog-filter" type="button" data-category="art">Art</button>
+    </div>
+
+    <div class="row g-4" id="blogList">
+
+      <div class="col-md-6 blog-card" data-category="campus">
+        <article class="card-clean p-4 h-100 d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start gap-3">
+            <h3 class="mb-0">Student Life: Campus Events</h3>
+            <span class="badge-pill badge-campus">Campus</span>
+          </div>
+
+          <p class="text-muted-weak mt-2 mb-3">
+            Recap of last week's activities and highlights.
+          </p>
+
+          <div class="mt-auto">
+            <button class="btn-primary-custom" type="button"
+              data-bs-toggle="collapse" data-bs-target="#blog1"
+              aria-expanded="false" aria-controls="blog1"
+              data-label-show="Read More" data-label-hide="Show Less">
+              Read More
+            </button>
+          </div>
+
+          <div class="collapse mt-3" id="blog1">
+            <p class="mb-0">
+              Highlights can include student org fairs, open mic nights, sports games, and volunteer drives.
+              Add photos or short quotes from attendees to make posts feel more “real.”
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 blog-card" data-category="study">
+        <article class="card-clean p-4 h-100 d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start gap-3">
+            <h3 class="mb-0">Study Tips for Midterms</h3>
+            <span class="badge-pill badge-study">Study</span>
+          </div>
+
+          <p class="text-muted-weak mt-2 mb-3">
+            Effective strategies and time-management tips for exams.
+          </p>
+
+          <div class="mt-auto">
+            <button class="btn-primary-custom" type="button"
+              data-bs-toggle="collapse" data-bs-target="#blog2"
+              aria-expanded="false" aria-controls="blog2"
+              data-label-show="Read More" data-label-hide="Show Less">
+              Read More
+            </button>
+          </div>
+
+          <div class="collapse mt-3" id="blog2">
+            <ul class="mb-0">
+              <li>Use a weekly plan and block time for review.</li>
+              <li>Practice active recall (flashcards / quizzes).</li>
+              <li>Study in short focused sessions with breaks.</li>
+              <li>Ask a friend to test you for key concepts.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 blog-card" data-category="art">
+        <article class="card-clean p-4 h-100 d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start gap-3">
+            <h3 class="mb-0">Behind the Gallery: Creative Process</h3>
+            <span class="badge-pill badge-art">Art</span>
+          </div>
+
+          <p class="text-muted-weak mt-2 mb-3">
+            A short look into how students develop an idea into finished work.
+          </p>
+
+          <div class="mt-auto">
+            <button class="btn-primary-custom" type="button"
+              data-bs-toggle="collapse" data-bs-target="#blog3"
+              aria-expanded="false" aria-controls="blog3"
+              data-label-show="Read More" data-label-hide="Show Less">
+              Read More
+            </button>
+          </div>
+
+          <div class="collapse mt-3" id="blog3">
+            <p class="mb-0">
+              Draft → feedback → refine → publish. Consider showing sketches, iterations, and what changed
+              after critique. This makes the final piece more meaningful.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 blog-card" data-category="campus">
+        <article class="card-clean p-4 h-100 d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start gap-3">
+            <h3 class="mb-0">Campus Spots: Quiet Places to Study</h3>
+            <span class="badge-pill badge-campus">Campus</span>
+          </div>
+
+          <p class="text-muted-weak mt-2 mb-3">
+            A mini guide to peaceful corners around campus.
+          </p>
+
+          <div class="mt-auto">
+            <button class="btn-primary-custom" type="button"
+              data-bs-toggle="collapse" data-bs-target="#blog4"
+              aria-expanded="false" aria-controls="blog4"
+              data-label-show="Read More" data-label-hide="Show Less">
+              Read More
+            </button>
+          </div>
+
+          <div class="collapse mt-3" id="blog4">
+            <p class="mb-0">
+              Try the library upper floors, early morning campus lounges, or shaded outdoor benches.
+              Add a “noise level” rating and best time to visit.
+            </p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+  <div class="modal fade modal-clean" id="storyModal" tabindex="-1" aria-labelledby="storyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="storyModalLabel">Share your story</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted-weak">
+            This is a front-end demo: your story is stored in your browser using <code>localStorage</code>.
+          </p>
+
+          <form id="storyForm" class="row g-3 needs-validation" novalidate>
+            <div class="col-md-6">
+              <label for="storyTitle" class="form-label">Title</label>
+              <input id="storyTitle" type="text" class="form-control" placeholder="My best day on campus" required>
+              <div class="invalid-feedback">Please add a title.</div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="storyCategory" class="form-label">Category</label>
+              <select id="storyCategory" class="form-control" required>
+                <option value="campus" selected>Campus</option>
+                <option value="study">Study</option>
+                <option value="art">Art</option>
+              </select>
+              <div class="invalid-feedback">Please choose a category.</div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="storyAuthor" class="form-label">Author</label>
+              <input id="storyAuthor" type="text" class="form-control" placeholder="Your name" required>
+              <div class="invalid-feedback">Please add an author name.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="storyImage" class="form-label">Optional image URL</label>
+              <input id="storyImage" type="url" class="form-control" placeholder="https://...">
+              <div class="form-text">Tip: you can paste an image link from the internet or your school portal.</div>
+            </div>
+
+            <div class="col-12">
+              <label for="storyBody" class="form-label">Story</label>
+              <textarea id="storyBody" class="form-control" rows="6" placeholder="Write your story here..." required></textarea>
+              <div class="d-flex justify-content-between mt-1">
+                <small class="text-muted-weak">Preview updates as you type.</small>
+                <small class="text-muted-weak"><span id="storyChars">0</span> chars</small>
+              </div>
+              <div class="invalid-feedback">Please write your story.</div>
+            </div>
+
+            <div class="col-12">
+              <div class="card-clean p-3" style="background: rgba(244,208,63,0.10);">
+                <div class="story-meta mb-1">Live preview</div>
+                <h3 class="h5" id="storyPreviewTitle" style="margin-bottom:6px;">Your title</h3>
+                <div class="story-meta" id="storyPreviewMeta">By you • Today</div>
+                <div class="mt-2" id="storyPreviewText">Your story preview will appear here...</div>
+              </div>
+            </div>
+
+            <div class="col-12 d-flex gap-2 flex-wrap">
+              <button class="btn-accent" type="submit">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Post Story
+              </button>
+              <button class="btn-outline-neutral" type="button" id="fillStoryDemo">
+                Fill Demo
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="blogToast" class="toast toast-clean" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">RAMpage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">Story posted! Scroll up to see your new card.</div>
+    </div>
+  </div>
+
+  <footer class="site-footer">© 2025 RAMpage</footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

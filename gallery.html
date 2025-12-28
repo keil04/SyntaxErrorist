@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="RAMpage — a student-driven blog and gallery for campus stories and creative work." />
+  <title>Gallery | RAMpage</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+<header>
+  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+    <div class="container-fixed">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="assets/logo.svg" alt="RAMpage logo" width="36" height="36">
+        <span class="brand-text">RAMpage</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html" aria-current="page">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="spotlight.html">Spotlight</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main id="main-content">
+
+  <section class="gallery-canvas">
+    <div class="gallery-wrapper">
+      <h1 class="page-heading">GALLERY</h1>
+      <div class="hr-thin"></div>
+
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <p class="text-muted-weak mb-0">
+          Click any tile to preview it in a Bootstrap modal. The selected tile is also featured at the top using jQuery.
+        </p>
+        <button class="btn-outline-neutral" type="button" id="resetFeatured">Reset Featured</button>
+      </div>
+
+      <div class="gallery-hero" id="galleryHero" role="img" aria-label="Featured artwork">
+        <div class="gallery-hero-inner">
+          <p class="text-muted-weak mb-0">Click a tile below to feature it here.</p>
+        </div>
+      </div>
+
+      <div class="gallery-grid" aria-label="Gallery tiles">
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Campus Sunrise" data-img="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" data-desc="A calm morning mood — perfect for a homepage feature image."
+    style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Campus Sunrise</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Student Art Wall" data-img="https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=1200&q=80" data-desc="A snapshot of creative work on display."
+    style="background-image:url('https://images.unsplash.com/photo-1526481280695-3c687fd643ed?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Student Art Wall</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Library Study" data-img="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80" data-desc="Quiet time, notes, and focus."
+    style="background-image:url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Library Study</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Campus Walk" data-img="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80" data-desc="An everyday campus path with lots of stories."
+    style="background-image:url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Campus Walk</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Notebook + Coffee" data-img="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80" data-desc="Small routines that keep students going."
+    style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Notebook + Coffee</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Creative Desk" data-img="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80" data-desc="Design, code, and a little bit of chaos."
+    style="background-image:url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Creative Desk</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Art Tools" data-img="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80" data-desc="Markers, paint, and the start of a new piece."
+    style="background-image:url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Art Tools</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Campus Event Lights" data-img="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" data-desc="Event energy and night-time vibes."
+    style="background-image:url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Campus Event Lights</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Photography Moment" data-img="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1200&q=80" data-desc="Capturing a quick moment for the gallery."
+    style="background-image:url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Photography Moment</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Group Study" data-img="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" data-desc="Teamwork makes hard classes easier."
+    style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Group Study</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Sketchbook" data-img="https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1200&q=80" data-desc="A sketchbook page mid-process."
+    style="background-image:url('https://images.unsplash.com/photo-1526318472351-c75fcf070305?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Sketchbook</span>
+  </button>
+  <button class="gallery-tile gallery-tile-btn" type="button"
+    data-bs-toggle="modal" data-bs-target="#galleryModal"
+    data-title="Student Showcase" data-img="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" data-desc="Showcase moments for spotlight features."
+    style="background-image:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80');background-size:cover;background-position:center;">
+    <span class="gallery-tile-label">Student Showcase</span>
+  </button>
+      </div>
+
+      <div class="hr-subtle"></div>
+      <div class="gallery-bottom-band" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content modal-clean">
+        <div class="modal-header">
+          <h2 class="modal-title h5 mb-0" id="galleryModalLabel">Artwork</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="galleryModalImg" src="" alt="" class="img-fluid rounded">
+          <p id="galleryModalDesc" class="text-muted-weak mt-3 mb-0"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+  <footer class="site-footer">© 2025 RAMpage</footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

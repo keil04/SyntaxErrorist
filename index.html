@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="RAMpage — a student-driven blog and gallery for campus stories and creative work." />
+  <title>Home | RAMpage</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+<header>
+  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+    <div class="container-fixed">
+      <a class="navbar-brand" href="index.html">
+        <img class="brand-logo" src="assets/logo.svg" alt="RAMpage logo" width="36" height="36">
+        <span class="brand-text">RAMpage</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="spotlight.html">Spotlight</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main id="main-content">
+
+  <section class="section">
+    <div class="container-fixed">
+      <h1 class="page-heading">Welcome to RAMpage</h1>
+      <p class="text-muted-weak" style="max-width:760px;">
+        A student-driven blog and gallery where students share campus events, stories, and creative work.
+        Explore the gallery or read the latest blogs.
+      </p>
+
+      <div class="mtop-24">
+        <a class="btn-primary-custom" href="gallery.html" data-bs-toggle="tooltip" title="Browse student artwork">Explore Gallery</a>
+        <a class="btn-accent" href="blogs.html" style="margin-left:12px;" data-bs-toggle="tooltip" title="Read student-written posts">Read Blogs</a>
+      </div>
+
+      <div class="row g-4 mtop-24">
+        <div class="col-md-4">
+          <div class="card-clean p-4 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <span class="icon-circle" aria-hidden="true"><i class="fa-solid fa-newspaper"></i></span>
+              <h2 class="h4 mb-0">Student Blogs</h2>
+            </div>
+            <p class="text-muted-weak mt-3 mb-0">Quick reads about campus life, study routines, and student experiences.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-clean p-4 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <span class="icon-circle" aria-hidden="true"><i class="fa-solid fa-image"></i></span>
+              <h2 class="h4 mb-0">Creative Gallery</h2>
+            </div>
+            <p class="text-muted-weak mt-3 mb-0">A visual space for art, photography, design, and campus moments.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-clean p-4 h-100">
+            <div class="d-flex align-items-center gap-3">
+              <span class="icon-circle" aria-hidden="true"><i class="fa-solid fa-star"></i></span>
+              <h2 class="h4 mb-0">Artist Spotlight</h2>
+            </div>
+            <p class="text-muted-weak mt-3 mb-0">Featured artists with highlights, quick facts, and a longer profile.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container-fixed">
+      <h2 class="h3">Start exploring</h2>
+
+      <div class="accordion accordion-clean" id="homeAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="accOneHeading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accOne" aria-expanded="false" aria-controls="accOne">
+              New here? Read how RAMpage works
+            </button>
+          </h3>
+          <div id="accOne" class="accordion-collapse collapse" aria-labelledby="accOneHeading" data-bs-parent="#homeAccordion">
+            <div class="accordion-body">
+              RAMpage is organized into Blogs, Gallery, and Spotlight. Each page uses Bootstrap layout,
+              custom CSS styling, and jQuery-powered interactions.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="accTwoHeading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accTwo" aria-expanded="false" aria-controls="accTwo">
+              Want to add content fast? Try the Blogs “Add Story”
+            </button>
+          </h3>
+          <div id="accTwo" class="accordion-collapse collapse" aria-labelledby="accTwoHeading" data-bs-parent="#homeAccordion">
+            <div class="accordion-body">
+              The Blogs page includes a gold “Add Story” button that opens a Bootstrap Modal. When you post,
+              the page uses jQuery <code>.val()</code> / <code>.text()</code> (get+set), plus <code>.prepend()</code>
+              to add your story card instantly.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="accThreeHeading">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accThree" aria-expanded="false" aria-controls="accThree">
+              Tip: Click a gallery tile to feature it at the top
+            </button>
+          </h3>
+          <div id="accThree" class="accordion-collapse collapse" aria-labelledby="accThreeHeading" data-bs-parent="#homeAccordion">
+            <div class="accordion-body">
+              The Gallery page uses a Bootstrap Modal and jQuery <code>.text()</code>, <code>.attr()</code>,
+              and <code>.html()</code> to preview and feature items.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+  <footer class="site-footer">© 2025 RAMpage — All rights reserved.</footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
